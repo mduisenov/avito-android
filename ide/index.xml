@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ides on Avito Android</title><link>https://avito-tech.github.io/avito-android/ide/</link><description>Recent content in Ides on Avito Android</description><generator>Hugo -- gohugo.io</generator><language>ru-ru</language><atom:link href="https://avito-tech.github.io/avito-android/ide/index.xml" rel="self" type="application/rss+xml"/><item><title>Android Studio templates</title><link>https://avito-tech.github.io/avito-android/ide/templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avito-tech.github.io/avito-android/ide/templates/</guid><description>Android Studio templates Запустите install_templates.sh или скопируйте папку вручную из ./templates в $ANDROID_STUDIO_DIR/plugins/android/lib/templates/other</description></item><item><title>IDE Benchmarking</title><link>https://avito-tech.github.io/avito-android/ide/benchmarking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avito-tech.github.io/avito-android/ide/benchmarking/</guid><description>Бенчмарки IDE Используем Performance testing plugin.
+Как попробовать? Установи плагин Запусти Help &amp;gt; Diagnostic &amp;gt; Execute Performance Scrip from File
+Выбери готовый сценарий из /benchmarks/ide Как проверить гипотезу и измерить разницу? Используем в ручном режиме:
+Прогони бенчмарк несколько раз до внесения изменений в проект Сохрани резульататы. Они отобразятся в диалоге после прогона бенчмарка Внеси изменения в проект Прогони бенчмарк несколько раз, сравни результаты. Что еще? Плагин умеет записывать YourKit snapshot с детальной информацией о всех вызовах методов.</description></item><item><title>IDE Custom configurations</title><link>https://avito-tech.github.io/avito-android/ide/configurations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avito-tech.github.io/avito-android/ide/configurations/</guid><description>Кастомные конфигурации Шарим в проекте кастомные run/debug конфигурации, чтобы все работало &amp;ldquo;из коробки&amp;rdquo;.
+Так гарантируем одинаковые корректные настройки, случайно не сломается.
+avito: собирает, устанавливает и запускает Авито.
+avitoInstall: собирает и устанавливает Авито, но не запускает автоматически приложение.
+Нужна из-за бага &amp;ldquo;Default activity not found&amp;rdquo;.
+localCheck: проверка всех этапов компиляции с учетом импакт анализа
+Как расшарить конфигурацию? Sharing Run/Debug Configurations</description></item><item><title>IDE Speedup</title><link>https://avito-tech.github.io/avito-android/ide/speedup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avito-tech.github.io/avito-android/ide/speedup/</guid><description>Ускорение IDE Чтобы IDE меньше тормозила при работе с проектом, попробуй эти настройки:
+Выдай IDE больше памяти По умолчанию IDE выделяет мало, чтобы суметь запуститься на слабой машине.
+Help | Edit custom VM Options
+-Xmx4g Слишком много не нужно. Чтобы посмотреть реальное потребление памяти:
+Appearance &amp;amp; Behavior | Appearance | Show memory indicator
+Включи удаленную сборку Mirakle
+Оставь только необходимые приложения Подключаем в settings.gradle только часть приложений, чтобы ускорить работу с проектом.</description></item></channel></rss>

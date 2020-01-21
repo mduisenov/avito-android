@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cds on Avito Android</title><link>https://avito-tech.github.io/avito-android/cd/</link><description>Recent content in Cds on Avito Android</description><generator>Hugo -- gohugo.io</generator><language>ru-ru</language><atom:link href="https://avito-tech.github.io/avito-android/cd/index.xml" rel="self" type="application/rss+xml"/><item><title>Artifacts</title><link>https://avito-tech.github.io/avito-android/cd/artifacts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avito-tech.github.io/avito-android/cd/artifacts/</guid><description>Артефакты сборки Где храним артефакты? Используем несколько хранилищ:
+Artifactory feature-toggles.json api.json staging apk QApps Play market/Play console релизный aab релизный proguard mapping Teamcity Android PR checks Вкладка Artifacts у билда Все файлы pull request Живет ~ 1 месяц Teamcity Android Release Вкладка Artifacts у билда Все файлы релизной сборки Живет ~ 1 месяц</description></item><item><title>QApps</title><link>https://avito-tech.github.io/avito-android/cd/qapps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avito-tech.github.io/avito-android/cd/qapps/</guid><description>QApps QApps Android
+Внутреннее хранилище сборок для ручного тестирования.
+Заливаем в него apk по расписанию из develop.
+См. конфиг uploadToQapps в build.gradle приложений.
+Как залить вручную в QApps с ветки? Локально Для каждого приложения есть задача qappsUpload&amp;lt;build variant&amp;gt;.
+Она заливает уже собранную apk.
+Собери apk ./gradlew :avito:qappsUploadStaging -Pci=true
+Чтобы было проще найти сборку, укажи комментарий аргументом -PbuildNumber=&amp;quot;my custom build&amp;quot; Known issues Для релизной сборки не совсем подходит, т.</description></item><item><title>Release</title><link>https://avito-tech.github.io/avito-android/cd/release/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avito-tech.github.io/avito-android/cd/release/</guid><description>Релиз приложения Android Канал для коммуникации: #regression-android
+Dashboard релизов
+Политика релизов мобильных приложений
+Как сделать фикс Для каждого релиза отводим ветку release/&amp;lt;Номер версии&amp;gt;
+Отводим ветку от релизной Делаем ПР с фиксом в релизную ветку Создаем ветку от текущего develop Делаем ПР с черри-пиком того же коммита в develop Кто сейчас релиз менеджер? На dashboard'е конкретного релиза есть поле Release manager</description></item></channel></rss>

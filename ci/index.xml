@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cis on Avito Android</title><link>https://avito-tech.github.io/avito-android/ci/</link><description>Recent content in Cis on Avito Android</description><generator>Hugo -- gohugo.io</generator><language>ru-ru</language><atom:link href="https://avito-tech.github.io/avito-android/ci/index.xml" rel="self" type="application/rss+xml"/><item><title>CI Gradle Plugin</title><link>https://avito-tech.github.io/avito-android/ci/cigradleplugin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avito-tech.github.io/avito-android/ci/cigradleplugin/</guid><description>CI Gradle plugin Для настройки CI под конкретный gradle модуль используется in-house плагин.
+Решает задачу точечной настройки типа и строгости проверок для разных сценариев.
+plugins { id(&amp;#34;com.avito.android.cd&amp;#34;) } builds { ... } Применяется например в модуле приложения, однако нет никаких ограничений, чтобы применить плагин как-то иначе (см. ./build.gradle)
+Builds Используется набор захардкоженых сценариев(builds):
+builds { fastCheck { ... } } localCheck - проверки компиляции на локальной машине fastCheck - максимально быстрые проверки, выполняющие требования к CI fullCheck - максимально полные проверки, можем жертвовать скоростью release - набор действий необходимых для предоставления всех релизных артефактов Steps Внутри сценариев описываем декларативно необходимые шаги:</description></item><item><title>CI Values</title><link>https://avito-tech.github.io/avito-android/ci/civalues/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avito-tech.github.io/avito-android/ci/civalues/</guid><description>Требования к Continuous Integration Польза Проверки помогают не допускать ошибки
+Скорость получения фидбека Ожидаем что билд идет не больше 30 минут
+Понятность фидбека При падении однозначно понимаем в чем проблема
+Нет лишнего шума (бесполезных warning'ов на которые неизвестно как реагировать)
+Детерминизм Запуски на том же коммите должны приводить к одинаковым результатам</description></item><item><title>Code review</title><link>https://avito-tech.github.io/avito-android/ci/impactanalysis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avito-tech.github.io/avito-android/ci/impactanalysis/</guid><description>Impact analysis Импакт анализ находит измененные файлы и запускает минимально возможный набор проверок. Это всегда баланс между скоростью проверок и их полнотой.
+Описание подхода: The Rise of Test Impact Analysis
+UI тесты Обзор реализации для автотестов: Android CI Impact analysis.
+Импакт анализу нужна помощь в привязке экрана к модулю. Для этого проставляем Screen.rootId.
+Ограничения В импакт анализе есть два типа ошибок:
+Не запустили, то что было задето. Запустили больше, чем было задето (fallback).</description></item><item><title>Custom Gradle Plugins</title><link>https://avito-tech.github.io/avito-android/ci/customgradleplugins/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avito-tech.github.io/avito-android/ci/customgradleplugins/</guid><description>Custom Gradle plugins Вся логика CI расположена в in-house gradle плагинах. Для тестирования корневого проекта смотри модуль build-script-test.
+How to start Начни с официальных туториалов, они сэкономят время:
+Gradle plugin development tutorials
+Для нас не актуальна только публикация плагинов. Custom tasks Если что-то не понятно, здесь тебе помогут:
+#gradle gradle-community.slack.com Работа с плагинами в IDE Предпочтительно использовать IntelliJ IDEA Import project Согласись использовать gradle wrapper Settings &amp;gt; Build, Execution, Deployment &amp;gt; Build Tools &amp;gt; Gradle &amp;gt; Runner Delegate IDE build/run actions to gradle (check) Run tests using : Gradle Test Runner Теперь можно запускать тесты по иконкам run</description></item><item><title>Сборки в контейнерах</title><link>https://avito-tech.github.io/avito-android/ci/containers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avito-tech.github.io/avito-android/ci/containers/</guid><description>Сборки в контейнерах Avito Docker documentation
+Все образы расположены в ci/docker.
+Android SDK Базовый образ c build tools. (будет сделан в MBS-7071)
+Android builder Образ который умеет собирать приложение в CI.
+How to update? Собери образ локально для проверки изменений: cd ci/docker ./publish &amp;lt;папка с dockerfile&amp;gt;` В output будет новый tag образа.
+Обнови тег образа в _main.sh в переменной IMAGE_ANDROID_BUILDER
+Убедись что образ отрабатывает корректно при локальном использовании.</description></item></channel></rss>
