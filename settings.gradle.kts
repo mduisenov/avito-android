@@ -2,8 +2,6 @@
 
 rootProject.name = "avito-android"
 
-enableFeaturePreview("GRADLE_METADATA")
-
 include(":upload-cd-build-result")
 include(":bitbucket")
 include(":lint-report")
