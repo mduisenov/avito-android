@@ -4,7 +4,6 @@ import com.avito.instrumentation.configuration.target.scheduling.quota.QuotaConf
 import com.avito.instrumentation.configuration.target.scheduling.reservation.TestsBasedDevicesReservationConfiguration
 import com.avito.instrumentation.reservation.request.Device.Emulator.Emulator22
 import com.avito.instrumentation.reservation.request.Device.Emulator.Emulator27
-import com.avito.kotlin.dsl.getMandatoryStringProperty
 import com.avito.kotlin.dsl.getOptionalStringProperty
 
 plugins {
@@ -18,6 +17,7 @@ val androidXVersion: String by project
 val sentryVersion: String by project
 val truthVersion: String by project
 val okhttpVersion: String by project
+val junitVersion: String by project
 
 //todo cleaner way to get these properties
 val buildTools = requireNotNull(project.properties["buildToolsVersion"]).toString()
@@ -63,8 +63,12 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:$androidXVersion")
     implementation("com.google.android.material:material:$androidXVersion")
 
+    androidTestImplementation("junit:junit:$junitVersion")
     androidTestImplementation(project(":test-inhouse-runner")) { isTransitive = false }
+    androidTestImplementation(project(":test-annotations")) { isTransitive = false }
     androidTestImplementation(project(":test-report")) { isTransitive = false }
+    androidTestImplementation(project(":report-viewer")) { isTransitive = false }
+    androidTestImplementation(project(":junit-utils")) { isTransitive = false }
     androidTestImplementation(project(":ui-testing-core"))
     androidTestImplementation("io.sentry:sentry:$sentryVersion")
     androidTestImplementation("com.google.truth:truth:$truthVersion")
