@@ -20,5 +20,3 @@ and we rely on it to test and ship our apps.
 [Telegram chat (Russian)](https://t.me/avito_android_opensource)
 
 ## Contribution
-
-TBD
